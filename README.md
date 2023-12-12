@@ -10,7 +10,7 @@
 
 # JsonPyd
 
-JsonPyd is a Python tool that automatically generates Pydantic models from JSON schemas.
+JsonPyd is a tool that automatically generates Pydantic models from JSON schemas.
 
 ## Installation
 
@@ -59,19 +59,33 @@ JsonPyd can also be used within Python files in a project:
 ```python
 from jsonpyd import JsonPyd
 
-# String containing a schema
 my_schema = '''
 {
-    "field1": "value1",
-    "field2": {
-        "nested_field": "value2"
+        "id": "1NW2ZvKYlo2CPkIVYDHw",
+        "object": "payment_method",
+        "price": 35.5312,
+        "price_str": null,
+        "billing_details": {
+            "address": {
+                "city": null,
+                "country": "TR",
+                "line1": null
+            },
+            "email": "jenny@example.com"
+        }
     }
-}
 '''
 
 # Create models using JsonPyd
 pkg = JsonPyd(schema=my_schema, options={"force_optional": True})
+
+
+# You can get Pydantic model by calling .model attribute.
+pkg.model
+
+# Or you can create .py file
 pkg.convert_to_py()
+
 ```
 
 This creates Pydantic models based on the specified JSON schema and converts them into a `.py` file.
@@ -84,4 +98,4 @@ This creates Pydantic models based on the specified JSON schema and converts the
 
 ## Contribution and Feedback
 
-For any contributions and feedback, please visit our GitHub page.
+For any contributions and feedback, please visit my GitHub page or reach me via email.
