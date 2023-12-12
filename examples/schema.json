@@ -1,0 +1,14 @@
+{
+        "id": "1NWo202eZvKYlo2CPkIVYDHw",
+        "object": "payment_method",
+        "price": 35.5312,
+        "price_str": null,
+        "billing_details": {
+            "address": {
+                "city": null,
+                "country": "TR",
+                "line1": null
+            },
+            "email": "jenny@example.com"
+        }
+    }
