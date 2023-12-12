@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "jsonpyd"
+version = "0.2.0"
+description = "Convert your JSON files into Pydantic classes."
+authors = ["sinantan <sinantanwork@gmail.com>"]
+readme = "README.md"
+packages = [
+    { include = "jsonpyd", from = 'src' },
+]
+
+[tool.poetry.metadata]
+license = "MIT"
+
+[tool.poetry.repository]
+type = "git"
+url = "https://github.com/kullanici/projem.git"
+
+[tool.poetry.dependencies]
+python = "^3.8.10"
+pydantic = "^2.0.3"
+pytest = "^7.4.0"
+argparse = "^1.4.0"
+mypy = "^1.7.1"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.5.0"
+
+[tool.poetry.scripts]
+jsonpyd = 'jsonpyd.cli:start_cli'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
